@@ -100,5 +100,17 @@ O Dashboard completo (disponível no arquivo `.pbix`) revelou os seguintes \*ins
 
 \## 🔗 Visualização
 
-O relatório completo pode ser visualizado abrindo o arquivo `Projeto 4 PBI.pbix` (ou o nome que você salvou).
+Devido a restrições de licença, a visualização interativa não está disponível online. O Dashboard final pode ser acessado em modo estático abaixo.
+
+
+
+\### Visão Geral do Dashboard (Estático)
+
+!\[Visão Geral do Dashboard de RH](./Dashboard\_Visao\_Geral.png)
+
+
+
+\### Relatório Completo
+
+\[Baixar Relatório Completo em PDF](./Relatorio\_Final.pdf)
 
