@@ -1,56 +1,56 @@
-\# 📊 Projeto de HR Analytics: Risco de Rotatividade e Fatores de Compensação
+Projeto de HR Analytics: Risco de Rotatividade e Fatores de Compensação
 
 
 
-\## Introdução
+&nbsp;Introdução
 
-Este projeto de \*\*Análise de Recursos Humanos (HR Analytics)\*\* utiliza dados da força de trabalho para identificar os principais \*drivers\* de Rotatividade (Turnover) e avaliar a correlação entre compensação, carga horária e satisfação no trabalho. O objetivo é fornecer \*insights\* acionáveis para a diretoria de RH, focando na retenção de talentos e na otimização da performance.
+Este projeto de \*\*Análise de Recursos Humanos (HR Analytics) utiliza dados da força de trabalho para identificar os principais \*drivers\* de Rotatividade (Turnover) e avaliar a correlação entre compensação, carga horária e satisfação no trabalho. O objetivo é fornecer \*insights\* acionáveis para a diretoria de RH, focando na retenção de talentos e na otimização da performance.
 
 
 
-\## 🎯 Desafios de Negócio e Metodologia
+&nbsp;Desafios de Negócio e Metodologia
 
 O projeto foi guiado pelas seguintes questões de negócio:
 
 
 
-1\.  \*\*Rotatividade (Turnover):\*\* Quais são os cargos e/ou departamentos com maior risco de saída?
+1\.  Rotatividade (Turnover): Quais são os cargos e/ou departamentos com maior risco de saída?
 
-2\.  \*\*Performance:\*\* Qual é a Média de Desempenho da força de trabalho e quais grupos a puxam para cima/baixo?
+2\.  Performance: Qual é a Média de Desempenho da força de trabalho e quais grupos a puxam para cima/baixo?
 
-3\.  \*\*Compensação vs. Carga:\*\* Existe correlação entre Salário, Carga Horária (Horas Extras) e Satisfação no Trabalho?
+3\.  Compensação vs. Carga:\*\* Existe correlação entre Salário, Carga Horária (Horas Extras) e Satisfação no Trabalho?
 
-4\.  \*\*Tenura:\*\* Qual é o impacto do Nível Hierárquico e Tempo de Empresa na retenção?
+4\.  Tenura: Qual é o impacto do Nível Hierárquico e Tempo de Empresa na retenção?
 
 
 
-\## 🛠️ Metodologia e Processo (ETL)
+&nbsp;Metodologia e Processo (ETL)
 
 O projeto seguiu uma metodologia estruturada:
 
 
 
-1\.  \*\*Extração e Limpeza (Python/Pandas):\*\*
+1\.  Extração e Limpeza (Python/Pandas):
 
-&nbsp;   \* Importação e validação inicial do \*dataset\* (verificação de duplicatas e dados ausentes).
+&nbsp;   Importação e validação inicial do \*dataset\* (verificação de duplicatas e dados ausentes).
 
-&nbsp;   \* \*\*Tratamento de Outliers:\*\* Aplicação de correção de \*outliers\* na coluna de remuneração (`MonthlyRate`) para evitar distorções na análise salarial.
+&nbsp;   Tratamento de Outliers: Aplicação de correção de \*outliers\* na coluna de remuneração (`MonthlyRate`) para evitar distorções na análise salarial.
 
-2\.  \*\*Modelagem de Dados (Power BI):\*\*
+2\.  Modelagem de Dados (Power BI):
 
-&nbsp;   \* O \*dataset\* foi desnormalizado em um \*\*Esquema Estrela\*\* composto por três tabelas:
+&nbsp;    O \*dataset\* foi desnormalizado em um \*\*Esquema Estrela\*\* composto por três tabelas:
 
-&nbsp;       \* \*\*FATO\\\_Performance:\*\* Contém métricas e valores (Salário, Desempenho, Rotatividade).
+&nbsp;        FATO\\\_Performance: Contém métricas e valores (Salário, Desempenho, Rotatividade).
 
-&nbsp;       \* \*\*DIM\\\_Funcionários:\*\* Contém atributos estáticos (`JobRole`, `JobLevel`).
+&nbsp;        DIM\\\_Funcionários: Contém atributos estáticos (`JobRole`, `JobLevel`).
 
-&nbsp;       \* \*\*DIM\\\_Comportamento:\*\* Contém as escalas de satisfação (`JobSatisfaction`, `WorkLifeBalance`).
+&nbsp;        DIM\\\_Comportamento: Contém as escalas de satisfação (`JobSatisfaction`, `WorkLifeBalance`).
 
-3\.  \*\*Cálculos (DAX):\*\* Criação de medidas chave como `Taxa de Rotatividade`, `Média Salarial` e `Média de Desempenho`.
+3\.  Cálculos (DAX):\* Criação de medidas chave como `Taxa de Rotatividade`, `Média Salarial` e `Média de Desempenho`.
 
 
 
-\## 📈 Insights Chave do Dashboard
+&nbsp;Insights Chave do Dashboard
 
 
 
@@ -58,59 +58,59 @@ O Dashboard completo (disponível no arquivo `.pbix`) revelou os seguintes \*ins
 
 
 
-\### 1. Risco Extremo de Rotatividade (Turnover)
+&nbsp;1. Risco Extremo de Rotatividade (Turnover)
 
-\* A \*\*Taxa de Rotatividade\*\* geral é de \*\*16,12%\*\*, mas a análise por cargo revela um ponto de crise:
+&nbsp;    A Taxa de Rotatividade geral é de \*16,12%\*, mas a análise por cargo revela um ponto de crise:
 
-\* \*\*O cargo de `Sales Representative` apresenta uma Taxa de Rotatividade alarmante, superior a 40%\*\*. Esta é a área que exige intervenção imediata.
-
-
-
-\### 2. A Correlação Salário vs. Satisfação
-
-\* O \*\*Gráfico de Dispersão\*\* (Média Salarial vs. Média Satisfação) mostrou que:
-
-&nbsp;   \* \*\*Funcionários que fazem Horas Extras (`OverTime: Yes`)\*\* recebem salários mais altos, mas não demonstram aumento proporcional na satisfação.
-
-&nbsp;   \* \*\*Conclusão:\*\* O dinheiro e o esforço extra não estão compensando o desgaste, o que pode ser um fator de risco para o aumento futuro do \*turnover\*.
+&nbsp;    O cargo de `Sales Representative` apresenta uma Taxa de Rotatividade alarmante, superior a 40%\*. Esta é a área que exige intervenção imediata.
 
 
 
-\### 3. Análise de Performance e Tenura
+&nbsp;2. A Correlação Salário vs. Satisfação
 
-\* A \*\*Média de Desempenho\*\* geral é de \*\*3,15\*\* (em uma escala de 1 a 4), indicando um bom resultado geral, mas que deve ser monitorado por departamento.
+&nbsp;     O Gráfico de Dispersão (Média Salarial vs. Média Satisfação) mostrou que:
 
-\* O \*\*Tempo de Empresa\*\* tem correlação visível com o Nível Hierárquico (`JobLevel`), sendo maior nos níveis mais altos, reforçando a importância dos planos de carreira e retenção de líderes.
+&nbsp;     Funcionários que fazem Horas Extras (`OverTime: Yes`) recebem salários mais altos, mas não demonstram aumento proporcional na satisfação.
 
-
-
-\## 💻 Tecnologias Utilizadas
+&nbsp;     Conclusão: O dinheiro e o esforço extra não estão compensando o desgaste, o que pode ser um fator de risco para o aumento futuro do \*turnover\*.
 
 
 
-\* \*\*Linguagem:\*\* Python
+&nbsp;3. Análise de Performance e Tenura
 
-\* \*\*Bibliotecas:\*\* Pandas (Limpeza e Tratamento de Dados)
+&nbsp;     A Média de Desempenho geral é de \*\*3,15\*\* (em uma escala de 1 a 4), indicando um bom resultado geral, mas que deve ser monitorado por departamento.
 
-\* \*\*Visualização e Modelagem:\*\* Power BI Desktop
-
-\* \*\*Versionamento:\*\* Git \& GitHub
+&nbsp;     O Tempo de Empresa tem correlação visível com o Nível Hierárquico (`JobLevel`), sendo maior nos níveis mais altos, reforçando a importância dos planos de carreira e retenção de líderes.
 
 
 
-\## 🔗 Visualização
+&nbsp;Tecnologias Utilizadas
+
+
+
+&nbsp;  Linguagem: Python
+
+&nbsp;  Bibliotecas: Pandas (Limpeza e Tratamento de Dados)
+
+&nbsp;  Visualização e Modelagem: Power BI Desktop
+
+&nbsp;  Versionamento: Git \& GitHub
+
+
+
+&nbsp;🔗 Visualização
 
 Devido a restrições de licença, a visualização interativa não está disponível online. O Dashboard final pode ser acessado em modo estático abaixo.
 
 
 
-\### Visão Geral do Dashboard (Estático)
+&nbsp;    Visão Geral do Dashboard (Estático)
 
 !\[Visão Geral do Dashboard de RH](./Dashboard\_Visao\_Geral.png)
 
 
 
-\### Relatório Completo
+&nbsp;    Relatório Completo
 
 \[Baixar Relatório Completo em PDF](./Relatorio\_Final.pdf)
 
